@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة رياض الصالحين الذكية</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🎓</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-content">
+            <div class="logo">
+                <span class="logo-icon">🏫</span>
+                <div class="logo-text">
+                    <h1>منصة رياض الصالحين الذكية</h1>
+                    <p>نظام المؤشرات والاستبيانات</p>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <a href="#dashboard">لوحة التحكم</a>
+                <a href="#surveys">الاستبيانات</a>
+                <a href="#reports">التقارير</a>
+                <a href="#settings">الإعدادات</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="dashboard-section">
+            <h2>لوحة التحكم</h2>
+            
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📋</div>
+                    <h3>الاستبيانات</h3>
+                    <p class="stat-number" id="surveyCount">4</p>
+                    <span class="stat-label">استبيان نشط</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">👥</div>
+                    <h3>المشاركين</h3>
+                    <p class="stat-number" id="participants">125</p>
+                    <span class="stat-label">مشارك</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">😊</div>
+                    <h3>متوسط الرضا</h3>
+                    <p class="stat-number" id="satisfaction">92%</p>
+                    <span class="stat-label">رضا عام</span>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <h3>معدل الإنجاز</h3>
+                    <p class="stat-number" id="completion">88%</p>
+                    <span class="stat-label">من الاستبيانات</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Surveys Section -->
+        <section id="surveys" class="surveys-section">
+            <h2>الاستبيانات المتاحة</h2>
+            <div class="surveys-grid">
+                <button class="survey-btn" onclick="openSurvey('الطلاب', 'students')">
+                    <span class="btn-icon">🎓</span>
+                    <span class="btn-text">استبيان الطلاب</span>
+                </button>
+
+                <button class="survey-btn" onclick="openSurvey('المعلمين', 'teachers')">
+                    <span class="btn-icon">👨‍🏫</span>
+                    <span class="btn-text">استبيان المعلمين</span>
+                </button>
+
+                <button class="survey-btn" onclick="openSurvey('أولياء الأمور', 'parents')">
+                    <span class="btn-icon">👨‍👩‍👧</span>
+                    <span class="btn-text">استبيان أولياء الأمور</span>
+                </button>
+
+                <button class="survey-btn" onclick="openSurvey('الإداريين', 'admin')">
+                    <span class="btn-icon">💼</span>
+                    <span class="btn-text">استبيان الإداريين</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="reports-section">
+            <h2>مؤشرات الأداء</h2>
+            <div class="chart-container">
+                <canvas id="performanceChart"></canvas>
+            </div>
+            
+            <div class="chart-container">
+                <h3>توزيع التقييمات</h3>
+                <canvas id="ratingChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <!-- Survey Modal -->
+    <div id="surveyModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeSurvey()">&times;</button>
+            <h2 id="surveyTitle"></h2>
+            
+            <form id="surveyForm" class="survey-form">
+                <div class="form-group">
+                    <label>ما مستوى رضاك عن المدرسة؟</label>
+                    <select name="satisfaction" required>
+                        <option value="">-- اختر --</option>
+                        <option value="5">ممتاز جداً ⭐⭐⭐⭐⭐</option>
+                        <option value="4">ممتاز ⭐⭐⭐��</option>
+                        <option value="3">جيد جداً ⭐⭐⭐</option>
+                        <option value="2">جيد ⭐⭐</option>
+                        <option value="1">مقبول ⭐</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>أفضل ما في المدرسة؟</label>
+                    <textarea name="strengths" placeholder="شارك ما تحب في المدرسة..." rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>مجالات التحسين والمقترحات</label>
+                    <textarea name="improvements" placeholder="ما الذي يمكن تحسينه؟..." rows="3"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="anonymous"> إرسال بشكل مجهول
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">إرسال الاستبيان</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p>&copy; 2026 منصة رياض الصالحين الذكية - جميع الحقوق محفوظة</p>
+        <p>تم التطوير بواسطة فريق التطوير</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/surveys.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "surveys": [
+    {
+      "id": "students",
+      "name": "استبيان الطلاب",
+      "icon": "🎓",
+      "description": "قياس رضا الطلاب عن البيئة التعليمية والمدرسة",
+      "target_group": "الط��اب",
+      "active": true,
+      "responses": 45,
+      "satisfaction_rate": 95
+    },
+    {
+      "id": "teachers",
+      "name": "استبيان المعلمين",
+      "icon": "👨‍🏫",
+      "description": "تقييم بيئة العمل والموارد المتاحة للمعلمين",
+      "target_group": "المعلمين",
+      "active": true,
+      "responses": 32,
+      "satisfaction_rate": 91
+    },
+    {
+      "id": "parents",
+      "name": "استبيان أولياء الأمور",
+      "icon": "👨‍👩‍👧",
+      "description": "معرفة رأي أولياء الأمور في مستوى الخدمات التعليمية",
+      "target_group": "أولياء الأمور",
+      "active": true,
+      "responses": 38,
+      "satisfaction_rate": 93
+    },
+    {
+      "id": "admin",
+      "name": "استبيان الإداريين",
+      "icon": "💼",
+      "description": "تقييم الأنظمة والعمليات الإدارية",
+      "target_group": "الإداريين",
+      "active": true,
+      "responses": 10,
+      "satisfaction_rate": 90
+    }
+  ],
+  "metadata": {
+    "total_participants": 125,
+    "total_responses": 125,
+    "average_satisfaction": 92.25,
+    "last_updated": "2026-06-23",
+    "school": "مدارس رياض الصالحين"
+  }
+}

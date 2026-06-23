@@ -1,0 +1,166 @@
+/* Tablets */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-menu {
+        gap: 15px;
+        font-size: 13px;
+    }
+
+    .logo-text h1 {
+        font-size: 18px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .surveys-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .container {
+        padding: 20px 15px;
+    }
+
+    section h2 {
+        font-size: 22px;
+    }
+
+    .modal-content {
+        width: 95%;
+        padding: 20px;
+        margin: 10% auto;
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+    .header-content {
+        padding: 0 10px;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo-icon {
+        font-size: 30px;
+    }
+
+    .logo-text h1 {
+        font-size: 16px;
+    }
+
+    .logo-text p {
+        font-size: 10px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .nav-menu a {
+        padding: 8px 0;
+    }
+
+    .container {
+        padding: 15px 10px;
+    }
+
+    section h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .stat-card {
+        padding: 20px;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .surveys-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .survey-btn {
+        padding: 20px 15px;
+    }
+
+    .btn-icon {
+        font-size: 24px;
+    }
+
+    .btn-text {
+        font-size: 14px;
+    }
+
+    .modal-content {
+        width: 98%;
+        padding: 15px;
+        margin: 20% auto;
+    }
+
+    .close-btn {
+        left: 10px;
+        top: 10px;
+    }
+
+    .form-group {
+        gap: 6px;
+    }
+
+    .form-group select,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    .submit-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .main-footer {
+        padding: 20px 10px;
+    }
+
+    .main-footer p {
+        font-size: 12px;
+    }
+}
+
+/* Small devices */
+@media (max-width: 360px) {
+    .logo-icon {
+        font-size: 25px;
+    }
+
+    .logo-text h1 {
+        font-size: 14px;
+    }
+
+    section h2 {
+        font-size: 16px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .stat-card h3 {
+        font-size: 14px;
+    }
+}
